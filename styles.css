@@ -82,8 +82,13 @@ body {
 }
 
 .card-grid {
+    grid-template-areas:
+        "first"
+        "second"
+        "third"
+        "fourth";
     justify-items: center;
-    row-gap: var(--space-30px);
+    gap: var(--space-30px);
 }
 
 .card-grid__card {
@@ -94,19 +99,23 @@ body {
 }
 
 .card-grid__first-card {
-    border-top: 4px solid var(--color-Cyan);
+    border-top: 3px solid var(--color-Cyan);
+    grid-area: first;
 }
 
 .card-grid__second-card {
     border-top: 4px solid var(--color-Red);
+    grid-area: second;
 }
 
 .card-grid__third-card {
     border-top: 4px solid var(--color-Orange);
+    grid-area: third;
 }
 
 .card-grid__fourth-card {
     border-top: 4px solid var(--color-Blue);
+    grid-area: fourth;
 }
 
 .card-grid__headings {
@@ -140,15 +149,22 @@ body {
     color: hsl(228, 45%, 44%);
 }
 
-@media (min-width: 600px) {
+@media (min-width: 800px){
     .card-grid {
-        grid-template-columns: repeat(auto-fit, minmax(var(--card-size), 1fr));
-        column-gap: var(--space-30px);
-        align-items: center;
+        grid-template-areas:
+            "first      second"
+            "first      second"
+            "fourth     third"
+            "fourth     third";
     }
+}
 
-    .card-grid__middle-cards {
-        display: grid;
-        row-gap: var(--space-30px);
+@media (min-width: 1200px){
+    .card-grid {
+        grid-template-areas:
+            ".      second  ."
+            "first  second  fourth"
+            "first  third   fourth"
+            ".      third   .";
     }
-} 
+}

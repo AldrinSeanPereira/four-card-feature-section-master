@@ -70,27 +70,22 @@ Combining the BEM naming + Custom properties + CSS Grid made me feel so happy to
 
 The CSS in the media query for card grid is plain awesome!!
 
-For grid columns, we are repeatedly creating columns of a size equal to a single card at minimum. 
-
-So when the browser window grows, and there is enough space, a column is created to hold a card.
-
-We wont get more than 3 columns totally as the containing body width is limited to 1440px.
-
 ```css
 :root {
     --space-60px: calc((60/16) * 1rem);
 }
 
-@media (min-width: 600px) {
-    .card-grid {
-        grid-template-columns: repeat(auto-fit, minmax(var(--card-size), 1fr));
-        column-gap: var(--space-30px);
-        align-items: center;
-    }
+.main-content {
+    margin: var(--space-60px) 0;
+}
 
-    .card-grid__middle-cards {
-        display: grid;
-        row-gap: var(--space-30px);
+@media (min-width: 1200px){
+    .card-grid {
+        grid-template-areas:
+            ".      second  ."
+            "first  second  fourth"
+            "first  third   fourth"
+            ".      third   .";
     }
 }
 ```
@@ -100,8 +95,9 @@ We wont get more than 3 columns totally as the containing body width is limited 
 Pro tip: use ALL resources!!
 
 - [BEM naming style](https://css-tricks.com/bem-101/)
-- [CSS Grid - Repeating columns code inspiration](https://youtu.be/x4u1yp3Msao?si=8NcgyQzcAdNZ4UOx)
-- [My gold standard practical CSS Grid reference](https://www.freecodecamp.org/news/learn-css-grid-by-building-5-layouts/) - I have been referring to this so many times its that good!
+- [My gold standard practical CSS Grid reference](https://www.freecodecamp.org/news/learn-css-grid-by-building-5-layouts/) - I have been referring to this so many times over so many months because its that good!
+- [Simple explanation on Grid template areas](https://www.w3schools.com/cssref/pr_grid-template-areas.php)
+- [Learn to write good CSS by Kevin Powell](https://youtu.be/x4u1yp3Msao?si=8NcgyQzcAdNZ4UOx)
 
 ## Author
 
