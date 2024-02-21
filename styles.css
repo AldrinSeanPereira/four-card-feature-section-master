@@ -60,6 +60,7 @@ body {
     justify-items: center;
     margin-bottom: var(--space-60px);
     color: var(--color-Very-Dark-Blue);
+    font-size: var(--font-size-18px);
 }
 
 .heading-group__first-heading {
@@ -70,6 +71,8 @@ body {
     color: var(--color-Grayish-Blue);
     margin-top: var(--space-30px);
     text-align: center;
+    width: 50%;
+    font-size: var(--font-size-13px);
 }
 
 .card-grid,
@@ -109,6 +112,7 @@ body {
     color: var(--color-Very-Dark-Blue);
     font-size: var(--font-size-18px);
     font-weight: var(--font-weight-600);
+    margin-bottom: var(--space-10px);
 }
 
 .card-grid__paragraphs {
