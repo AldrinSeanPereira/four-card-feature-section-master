@@ -48,6 +48,7 @@ body {
     position: relative;
     display: grid;
     justify-items: center;
+    margin: auto;
 }
 
 .main-content {
