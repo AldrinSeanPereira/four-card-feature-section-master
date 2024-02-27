@@ -52,19 +52,11 @@ It also showcases my ability to create high quality maintainable code using BEM 
 Combining the BEM naming + Custom properties + CSS Grid made me feel so happy to make this project
 
 ```html
-<div class="card-grid__middle-cards">
-        <div class="card-grid__card card-grid__second-card">
-          <h3 class="card-grid__headings">Team Builder</h3>
-          <p class="card-grid__paragraphs">Scans our talent network to create the optimal team for your project</p>
-          <img class="card-grid__image" src="images/icon-team-builder.svg" alt="browser with home icon" />
-        </div>
-
-        <div class="card-grid__card card-grid__third-card">
-          <h3 class="card-grid__headings">Karma</h3>
-          <p class="card-grid__paragraphs">Regularly evaluates our talent to ensure quality</p>
-          <img class="card-grid__image" src="images/icon-karma.svg" alt="lightbulb icon" />
-        </div>
-      </div>
+<div class="card-grid__card card-grid__card--cyan">
+  <h3 class="card-grid__headings">Supervisor</h3>
+  <p class="card-grid__paragraphs">Monitors activity to identify project roadblocks</p>
+  <img class="card-grid__image" src="images/icon-supervisor.svg" alt="magnifying glass icon" />
+</div>
 ```
 <br>
 
@@ -72,20 +64,40 @@ The CSS in the media query for card grid is plain awesome!!
 
 ```css
 :root {
-    --space-60px: calc((60/16) * 1rem);
+    --space-10px: calc((10/16) * 1rem);
 }
 
-.main-content {
-    margin: var(--space-60px) 0;
+.card-grid__card--cyan {
+    background-image: linear-gradient(
+        var(--color-Cyan) 2%,
+        transparent 2%
+    );
 }
 
 @media (min-width: 1200px){
     .card-grid {
-        grid-template-areas:
-            ".      second  ."
-            "first  second  fourth"
-            "first  third   fourth"
-            ".      third   .";
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    .card-grid__card:nth-of-type(1) {
+        grid-column: 1;
+        grid-row: 2 / span 2;
+    }
+
+    .card-grid__card:nth-of-type(2) {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+    }
+
+    .card-grid__card:nth-of-type(3) {
+        grid-column: 2;
+        grid-row: 3 / span 2;
+    }
+
+    .card-grid__card:nth-of-type(4) {
+        grid-column: 3;
+        grid-row: 2 / span 2;
     }
 }
 ```
@@ -95,8 +107,12 @@ The CSS in the media query for card grid is plain awesome!!
 Pro tip: use ALL resources!!
 
 - [BEM naming style](https://css-tricks.com/bem-101/)
-- [My gold standard practical CSS Grid reference](https://www.freecodecamp.org/news/learn-css-grid-by-building-5-layouts/) - I have been referring to this so many times over so many months because its that good!
-- [Simple explanation on Grid template areas](https://www.w3schools.com/cssref/pr_grid-template-areas.php)
+
+- CSS Grid study references:
+  - start here with [Grid Garden](https://cssgridgarden.com/)
+  - Article 1 : [CSS Grid theory - simple version to build more knowledge](https://www.freecodecamp.org/news/css-grid-tutorial-with-cheatsheet/)
+  - Article 2 : [How to use CSS Grid practically ](https://www.freecodecamp.org/news/learn-css-grid-by-building-5-layouts/) - I have been referring to this so many times over so many months because its that good!
+  - Article 3 : [CSS Grid theory - long version for reference](https://www.freecodecamp.org/news/complete-guide-to-css-grid/)
 - [Learn to write good CSS by Kevin Powell](https://youtu.be/x4u1yp3Msao?si=8NcgyQzcAdNZ4UOx)
 
 ## Author
