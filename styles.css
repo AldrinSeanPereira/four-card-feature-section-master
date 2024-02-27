@@ -12,7 +12,6 @@
 
     /* spacing */
     --space-10px: calc((10/16) * 1rem);
-    --space-25px: calc((25/16) * 1rem);
     --space-30px: calc((30/16) * 1rem);
     --space-60px: calc((60/16) * 1rem);
 
@@ -21,6 +20,7 @@
     --font-size-13px: calc((13/16) * 1rem);
     --font-size-15px: calc((15/16) * 1rem);
     --font-size-18px: calc((18/16) * 1rem);
+    --font-size-23px: calc((23/16) * 1rem);
 
     /* font-weights */
     --font-weight-200: 200;
@@ -28,7 +28,7 @@
     --font-weight-600: 600;
 
     /* others */
-    --grid-size-max: calc((1000/16) * 1rem);
+    --grid-size-max: calc((1050/16) * 1rem);
     --border-radius: calc((10/16) * 1rem);
     --footer-position: calc((8/16) * 1rem);
 }
@@ -88,7 +88,7 @@ body {
 
 .card-grid {
     max-width: var(--grid-size-max);
-    gap: var(--space-25px);
+    gap: var(--space-30px);
 }
 
 .card-grid__card {
@@ -170,11 +170,12 @@ body {
 @media (min-width: 1200px){
 
     .heading-group {
-        font-size: var(--font-size-18px);
+        font-size: var(--font-size-23px);
     }
+
     .heading-group__paragraph {
         width: 45%;
-        font-size: var(--font-size-15px);
+        font-size: initial;
     }
 
     .card-grid {
