@@ -20,7 +20,7 @@
     --font-size-13px: calc((13/16) * 1rem);
     --font-size-15px: calc((15/16) * 1rem);
     --font-size-18px: calc((18/16) * 1rem);
-    --font-size-23px: calc((23/16) * 1rem);
+    --font-size-30px: calc((30/16) * 1rem);
 
     /* font-weights */
     --font-weight-200: 200;
@@ -69,7 +69,7 @@ body {
 
 .heading-group > * {
     text-align: center;
-    width: 70%;
+    width: 100%;
 }
 
 .heading-group__first-heading {
@@ -79,6 +79,7 @@ body {
 .heading-group__paragraph {
     color: var(--color-Grayish-Blue);
     margin-top: var(--space-30px);
+    width: 70%;
 }
 
 .card-grid,
@@ -161,6 +162,11 @@ body {
 /* because grid areas was not giving an equal size for each card */
 
 @media (min-width: 800px){
+
+    .heading-group > h2 {
+        font-size: var(--font-size-30px);
+    }
+
     .card-grid {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
@@ -169,13 +175,8 @@ body {
 
 @media (min-width: 1200px){
 
-    .heading-group {
-        font-size: var(--font-size-23px);
-    }
-
     .heading-group__paragraph {
         width: 45%;
-        font-size: initial;
     }
 
     .card-grid {
